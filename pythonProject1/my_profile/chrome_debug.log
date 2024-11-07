@@ -1,14 +1,14 @@
-[18264:21640:1102/160729.907:WARNING:chrome_main_delegate.cc(744)] This is Chrome version 130.0.6723.92 (not a warning)
-[18264:21640:1102/160730.069:INFO:chrome_browser_cloud_management_controller.cc(196)] No machine level policy manager exists.
-[1996:5360:1102/160730.129:WARNING:viz_main_impl.cc(85)] VizNullHypothesis is disabled (not a warning)
-[20804:20196:1102/160730.294:INFO:cpu_info.cc(53)] Available number of cores: 12
-[4536:15452:1102/160730.296:INFO:cpu_info.cc(53)] Available number of cores: 12
-[17176:22144:1102/160730.599:INFO:cpu_info.cc(53)] Available number of cores: 12
-[17964:23620:1102/160730.636:INFO:cpu_info.cc(53)] Available number of cores: 12
-[18264:21640:1102/160740.737:WARNING:controller_impl.cc(1192)] Background download complete, client: 6, completion type: 0, file size:5157
-[18264:21640:1102/160741.219:WARNING:controller_impl.cc(1192)] Background download complete, client: 6, completion type: 0, file size:265059
-[18264:21640:1102/160741.437:WARNING:controller_impl.cc(1192)] Background download complete, client: 6, completion type: 0, file size:883094
-[18264:21640:1102/160741.936:WARNING:controller_impl.cc(1192)] Background download complete, client: 6, completion type: 0, file size:2200227
-[18264:21640:1102/160743.213:WARNING:controller_impl.cc(1192)] Background download complete, client: 6, completion type: 1, file size:0
-[18056:18352:1102/160743.229:WARNING:sqlite_persistent_store_backend_base.cc(198)] Failed to post task from FlushAndNotifyInBackground@net\extras\sqlite\sqlite_persistent_store_backend_base.cc:248 to client_task_runner_.
-[18056:18352:1102/160743.229:WARNING:sqlite_persistent_store_backend_base.cc(198)] Failed to post task from FlushAndNotifyInBackground@net\extras\sqlite\sqlite_persistent_store_backend_base.cc:248 to client_task_runner_.
+[6984:53456:1107/152828.909:WARNING:chrome_main_delegate.cc(744)] This is Chrome version 130.0.6723.92 (not a warning)
+[6984:53456:1107/152829.055:INFO:chrome_browser_cloud_management_controller.cc(196)] No machine level policy manager exists.
+[32896:22512:1107/152829.126:WARNING:viz_main_impl.cc(85)] VizNullHypothesis is disabled (not a warning)
+[51092:28772:1107/152829.220:INFO:cpu_info.cc(53)] Available number of cores: 12
+[29756:27836:1107/152829.236:INFO:cpu_info.cc(53)] Available number of cores: 12
+[22652:30768:1107/152829.460:INFO:cpu_info.cc(53)] Available number of cores: 12
+[34176:35152:1107/152829.546:INFO:cpu_info.cc(53)] Available number of cores: 12
+[6984:4540:1107/152838.110:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[33084:27736:1107/152838.116:WARNING:dns_config_service_win.cc(605)] Failed to read DnsConfig.
+[33732:32132:1107/152851.462:INFO:cpu_info.cc(53)] Available number of cores: 12
+[36184:11764:1107/152852.662:INFO:cpu_info.cc(53)] Available number of cores: 12
+[42448:24108:1107/152854.876:INFO:cpu_info.cc(53)] Available number of cores: 12
+[33084:27736:1107/152904.185:WARNING:sqlite_persistent_store_backend_base.cc(198)] Failed to post task from FlushAndNotifyInBackground@net\extras\sqlite\sqlite_persistent_store_backend_base.cc:248 to client_task_runner_.
+[33084:27736:1107/152904.185:WARNING:sqlite_persistent_store_backend_base.cc(198)] Failed to post task from FlushAndNotifyInBackground@net\extras\sqlite\sqlite_persistent_store_backend_base.cc:248 to client_task_runner_.

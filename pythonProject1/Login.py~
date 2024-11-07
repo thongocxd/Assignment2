@@ -1,0 +1,39 @@
+import time
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from custom_user_agent import get_chrome_driver_with_custom_user_agent
+
+
+driver = get_chrome_driver_with_custom_user_agent(('/my_profile'))
+driver.get("https://demo.opencart.com/")
+
+def test_case_001():
+    driver.get("https://demo.opencart.com/")
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()
+
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "Login"))).click()
+    time.sleep(5)
+
+    # Điền thông tin đăng nhập
+    email = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, "input-email")))
+    password = driver.find_element(By.ID, "input-password")
+
+    email.send_keys("phuc@gmail.com")
+    password.send_keys("123456")
+    time.sleep(5)
+    driver.find_element(By.CSS_SELECTOR, "button.btn.btn-primary").click()
+    time.sleep(5)
+    # Kiểm tra kết quả đăng nhập
+    try:
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.LINK_TEXT, "Logout")))
+        print("Đăng nhập thành công!")
+    except:
+        print("Đăng nhập thất bại!")
+    time.sleep(15)
+
+    driver.quit()
+
+
+if __name__ == "__main__":
+    test_case_001()
