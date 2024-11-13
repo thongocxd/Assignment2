@@ -17,7 +17,7 @@ def test_case_008():
 
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "Register"))).click()
     time.sleep(5)
-
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     frist_name = driver.find_element(By.ID, "input-firstname")
 
     last_name = driver.find_element(By.ID, "input-lastname")
@@ -28,7 +28,7 @@ def test_case_008():
 
     frist_name.send_keys("phuc")
     last_name.send_keys("pro")
-    email.send_keys("phucpro5@gmail.com")
+    email.send_keys("phucpro7@gmail.com")
     password.send_keys("123456")
     time.sleep(5)
     # Chọn hộp kiểm chính sách quyền riêng tư
@@ -56,11 +56,11 @@ def test_case_008():
     driver.quit()
 
 def test_case_009():
+    driver = webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "Register"))).click()
-    time.sleep(5)
-
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     # Điền thông tin vào biểu mẫu với email không hợp lệ
     first_name = driver.find_element(By.ID, "input-firstname")
     last_name = driver.find_element(By.ID, "input-lastname")
@@ -71,7 +71,6 @@ def test_case_009():
     last_name.send_keys("Pro")
     email.send_keys("phucpro2gmail")  # Email sai định dạng (thiếu .com)
     password.send_keys("123456")
-    time.sleep(2)
 
     # Chọn hộp kiểm chính sách quyền riêng tư
     driver.find_element(By.NAME, "agree").click()
@@ -93,13 +92,14 @@ def test_case_009():
 
 
 def test_case_010():
+    driver = webdriver.Chrome()
     # Khởi tạo Chrome WebDriver
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
 
     # Chuyển tới trang đăng ký tài khoản
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "Register"))).click()
-
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     # Điền vào các trường của biểu mẫu
     driver.find_element(By.ID, "input-firstname").send_keys("a" * 33)  # Nhập tên dài hơn 32 ký tự
     driver.find_element(By.ID, "input-lastname").send_keys("TestLastName")
@@ -132,6 +132,7 @@ def test_case_010():
         # Đóng trình duyệt
         driver.quit()
 def test_case_011():
+    driver = webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()
 
@@ -152,6 +153,8 @@ def test_case_011():
     time.sleep(2)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "Address Book"))).click()
     time.sleep(2)
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(2)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "New Address"))).click()
     time.sleep(2)
     # Điền vào các trường của biểu mẫu
@@ -162,20 +165,18 @@ def test_case_011():
     driver.find_element(By.ID, "input-address-2").send_keys("Phường 3")
     driver.find_element(By.ID, "input-city").send_keys("Hồ Chí Minh")
     driver.find_element(By.ID, "input-postcode").send_keys("700000")
-    time.sleep(5)
-    # Chọn quốc gia và vùng (state)
+    (driver.execute_script("window.scrollTo(0, document.body.scrollHeight);"))
+    time.sleep(2)
     country_dropdown = driver.find_element(By.ID, "input-country")
     country_dropdown.click()
     country_dropdown.find_element(By.XPATH, "//option[contains(text(), 'Viet Nam')]").click()
     time.sleep(2)  # Chờ danh sách vùng tải xong
-
     region_dropdown = driver.find_element(By.ID, "input-zone")
     region_dropdown.click()
     region_dropdown.find_element(By.XPATH, "//option[contains(text(), 'Ho Chi Minh')]").click()
 
     # Nhấp vào nút "Continue" để lưu địa chỉ
     driver.find_element(By.CSS_SELECTOR, "button.btn.btn-primary").click()
-    time.sleep(100)
     # Kiểm tra xem địa chỉ đã được thêm thành công chưa
     try:
         success_message = WebDriverWait(driver, 10).until(
@@ -190,6 +191,7 @@ def test_case_011():
 
 
 def test_case_012():
+    driver = webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
 
     # Đăng nhập vào tài khoản
@@ -206,6 +208,8 @@ def test_case_012():
     # Mở Address Book và thêm địa chỉ mới
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "Address Book"))).click()
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(2)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "New Address"))).click()
     time.sleep(2)
 
@@ -218,7 +222,8 @@ def test_case_012():
     driver.find_element(By.ID, "input-city").send_keys("Hồ Chí Minh")
     driver.find_element(By.ID, "input-postcode").send_keys("abc123")  # Mã ZIP không hợp lệ
     time.sleep(5)
-
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(2)
     # Chọn quốc gia và vùng (state)
     country_dropdown = driver.find_element(By.ID, "input-country")
     country_dropdown.click()
@@ -246,11 +251,10 @@ def test_case_012():
         time.sleep(5)
         driver.quit()
 def test_case_013():
+    driver = webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()
-
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "Register"))).click()
-    time.sleep(5)
 
     frist_name = driver.find_element(By.ID, "input-firstname")
 
@@ -264,7 +268,8 @@ def test_case_013():
     last_name.send_keys("pro")
     email.send_keys("phucpro2104@gmail.com")
     password.send_keys("1234567")
-    time.sleep(5)
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(2)
     # Chọn hộp kiểm chính sách quyền riêng tư
     driver.find_element(By.NAME, "agree").click()
 
@@ -274,7 +279,7 @@ def test_case_013():
     # Kiểm tra xem có hiển thị thông báo lỗi cho email không hợp lệ
     try:
         error_message = WebDriverWait(driver, 20).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, "div#error-email.invalid-feedback.d-block"))
+            EC.visibility_of_element_located((By.CSS_SELECTOR, "divr"))
         )
         print("Thông báo lỗi email không hợp lệ:", error_message.text)
     except:
@@ -283,6 +288,3 @@ def test_case_013():
         time.sleep(5)
         driver.quit()
 
-
-if __name__ == "__main__":
-    test_case_008()

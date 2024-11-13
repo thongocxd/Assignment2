@@ -68,7 +68,7 @@ def test_case_016_navigate_main_menu():
     driver.quit()
 
 
-def test_case_016_login_and_navigate_to_cart():
+def test_case_017_login_and_navigate_to_cart():
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
     time.sleep(2)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()
@@ -97,7 +97,7 @@ def test_case_016_login_and_navigate_to_cart():
 
     driver.quit()
 
-def test_case_017_navigate_to_checkout():
+def test_case_018_navigate_to_checkout():
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
     time.sleep(2)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()

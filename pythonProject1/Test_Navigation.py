@@ -11,6 +11,7 @@ driver = webdriver.Chrome()
 driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
 
 def test_case_014_navigate_to_homepage():
+    driver=webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=checkout/cart&language=en-gb")
     time.sleep(5)
     driver.find_element(By.CSS_SELECTOR, "img.img-fluid").click()
@@ -22,6 +23,7 @@ def test_case_014_navigate_to_homepage():
 
 
 def test_case_015_navigate_to_product_page():
+        driver = webdriver.Chrome()
         driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
         time.sleep(2)
 
@@ -39,6 +41,7 @@ def test_case_015_navigate_to_product_page():
 
 
 def test_case_016_navigate_main_menu():
+    driver = webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
     time.sleep(2)
 
@@ -69,6 +72,7 @@ def test_case_016_navigate_main_menu():
 
 
 def test_case_017_login_and_navigate_to_cart():
+    driver = webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
     time.sleep(2)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()
@@ -98,6 +102,7 @@ def test_case_017_login_and_navigate_to_cart():
     driver.quit()
 
 def test_case_018_navigate_to_checkout():
+    driver = webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
     time.sleep(2)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()

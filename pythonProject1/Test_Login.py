@@ -34,18 +34,20 @@ def test_case_001():
     driver.quit()
 
 def test_case_002():
+    driver = webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()
 
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "Login"))).click()
 
-
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(2)
     # Điện trang đăng nhập
     email = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, "input-email")))
     password = driver.find_element(By.ID, "input-password")
 
     email.send_keys("phucpro2104@gmail.com")
-    password.send_keys("1234567")
+    password.send_keys("123456789")
 
     driver.find_element(By.CSS_SELECTOR, "button.btn.btn-primary").click()
 
@@ -61,6 +63,7 @@ def test_case_002():
 
 
 def test_case_003():
+    driver = webdriver.Chrome()
     # Step 1: Log in to the account
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()
@@ -91,6 +94,7 @@ def test_case_003():
 
 
 def test_case_004():
+    driver = webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "Login"))).click()
@@ -133,6 +137,7 @@ def test_case_004():
     print("Hoàn thành kiểm tra số lần nhập mật khẩu sai.")
     driver.quit()
 def test_case_005():
+    driver = webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
 
     # Điều hướng đến trang đăng nhập
@@ -160,6 +165,7 @@ def test_case_005():
         driver.quit()
 
 def test_case_006():
+    driver = webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "My Account"))).click()
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "Login"))).click()
@@ -205,7 +211,7 @@ def test_case_006():
         print("Thay đổi mật khẩu thất bại!")  # Password change failed
 
 def test_case_007():
-
+    driver = webdriver.Chrome()
     driver.get("http://localhost/opencart/index.php?route=common/home&language=en-gb")
 
     # Điều hướng đến trang đăng nhập
@@ -233,3 +239,4 @@ def test_case_007():
     finally:
         time.sleep(5)
     driver.quit()
+
